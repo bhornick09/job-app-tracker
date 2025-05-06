@@ -54,7 +54,7 @@ function App() {
           <h1 className="text-white text-6xl font-bold py-5 justify-self-center">Application Tracker</h1>
           <h1 className="text-blue-400 text-6xl animate-pulse justify-self-center">+</h1>
           <h1 className="text-white text-9xl font-bold justify-self-center">Open AI</h1>
-          <h2 className="text-blue-500 py-5 justify-self-center">Track your job applications and adjust your resume, all in one place </h2>
+          <h2 className="text-blue-500 py-5 justify-self-center">Track your job applications and adjust your resume</h2>
         </div>
       </div>
 
