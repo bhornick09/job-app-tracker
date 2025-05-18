@@ -1,6 +1,15 @@
 version: 1
 backend:
   phases:
+    preBuild:
+      commands:
+        - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+        - export NVM_DIR=$HOME/.nvm
+        - source $NVM_DIR/nvm.sh
+        - nvm install 20
+        - nvm use 20
+        - node -v
+        - npm install -g npm@latest
     build:
       commands:
         - npm ci --cache .npm --prefer-offline
