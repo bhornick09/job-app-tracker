@@ -1,23 +1,13 @@
 version: 1
 
-backend:
-  phases:
-    preBuild:
-      commands:
-        - nvm install 20
-        - nvm use 20
-    build:
-      commands:
-        - rm -rf node_modules package-lock.json .npm
-        - npm ci --prefer-offline
-        - npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
-
 frontend:
   phases:
     preBuild:
       commands:
         - nvm install 20
         - nvm use 20
+        - rm -rf node_modules .npm
+        - npm ci --prefer-offline
     build:
       commands:
         - npm run build
@@ -27,6 +17,5 @@ frontend:
     files:
       - '**/*'
 
-  # 👇 Disable cache completely to force full clean builds
   cache:
     paths: []
